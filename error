@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int v1 = 0;
+        if (true) {
+            int v2 = 0;
+            if (true) {
+                int v3 = 0;
+                v1 = 1;
+                v2 = 1;
+                v3 = 1;
+            }
+            v1 = v2 + v3; // v3변수 접근불가 (블록 내부에서 선언되고, 블록 내부에서 실행됨)
+        }
+        System.out.println(v1);
+    }
+}
+
+
+
+// 올바른 코드 
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int v1 = 0; // 변수 v1 선언 및 초기화
+        int v2 = 0; // 변수 v2 선언 및 초기화
+        int v3 = 0; // 변수 v3 선언 및 초기화
+
+        if (true) { // 조건문 시작
+            v1 = 1; // v1에 1 할당
+            v2 = 1; // v2에 1 할당
+            v3 = 1; // v3에 1 할당
+        }
+
+        v1 = v2 + v3; // v1에 v2와 v3의 합 할당
+
+        System.out.println(v1); // v1 출력
+    }
+}
