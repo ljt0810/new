@@ -1,4 +1,4 @@
-import java.util.Scanner;
+// 컴파일 에러 발생하는 위치 찾기
 
 public class Main {
     public static void main(String[] args) {
@@ -20,8 +20,6 @@ public class Main {
 
 
 // 올바른 코드 
-
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
