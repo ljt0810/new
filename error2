@@ -1,0 +1,75 @@
+//문제된 코드
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("1. 이름: ");
+        String name = sc.nextLine();
+
+        System.out.println("2. 주민번호 앞 6자리: ");
+        int age = sc.nextInt();
+
+        //입력을 받을 때 문제가 발생합니다. sc.nextLine() 메서드를 사용하여 문자열을 입력받은 후 sc.nextInt() 메서드를 사용하면 문제가 발생합니다. 
+        //이는 nextInt() 메서드가 정수를 입력받은 후 엔터키(\n)를 읽지 않고 버퍼에 남겨둔 채로 실행되기 때문입니다. 
+        //그 다음에 호출된 nextLine() 메서드는 버퍼에 남아있는 엔터키를 읽어서 빈 문자열을 반환하게 됩니다.
+
+        System.out.println("3. 전화번호: ");
+        String phoneNumber = sc.nextLine();
+
+        System.out.println(name);
+        System.out.println(age);
+        System.out.println(phoneNumber);
+        }
+    }
+
+
+//수정된 코드
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("1. 이름: ");
+        String name = sc.nextLine();
+
+        System.out.println("2. 주민번호 앞 6자리: ");
+        int age = Integer.parseInt(sc.nextLine());
+        //Integer 클래스의 parseInt 메소드를 사용하여 문자열을 정수형으로 변환
+
+        System.out.println("3. 전화번호: ");
+        String phoneNumber = sc.nextLine();
+
+        System.out.println(name);
+        System.out.println(age);
+        System.out.println(phoneNumber);
+    }
+}
+
+//다른방법
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("1. 이름: ");
+        String name = sc.nextLine();
+
+        System.out.println("2. 주민번호 앞 6자리: ");
+        String age = sc.nextLine();
+        //애초에 문자열로 입력받으면 됨
+
+        System.out.println("3. 전화번호: ");
+        String phoneNumber = sc.nextLine();
+
+        System.out.println(name);
+        System.out.println(age);
+        System.out.println(phoneNumber);
+        }
+    }
